@@ -25,7 +25,7 @@ def are_3_same(array):
 
 
 def is_game_ended(board):
-    if all(all(map(lambda element: element != EMPTY, row)) for row in board):
+    if len(get_empty_indices(board)) == 0:
         return True, 0
 
     possibilities = [are_3_same(board[0]),
